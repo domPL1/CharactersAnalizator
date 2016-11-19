@@ -17,6 +17,7 @@ import javafx.stage.FileChooser.ExtensionFilter;
 
 public class FXMLDocumentController implements Initializable {
     LinkedHashMap<Character,Integer> map;
+    BufferedReader in;
     FileChooser a;
     @FXML
     private TextArea text1;
@@ -56,6 +57,7 @@ public class FXMLDocumentController implements Initializable {
         for (int i=32;i<128;i++){
             text2.appendText((char) i  + " = " + map.get((char)i)+ "\n");
         }
+        in.close();
     }
     @FXML
     private void close(){
